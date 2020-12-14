@@ -14,7 +14,23 @@ namespace Lesson_2._4
             string nameOfmonth = "";
             int minTemperature;
             int maxTemperature;
-                Console.WriteLine("Напишите номер месяца!");
+            /*
+             *                  Задание номер 1.
+             *                  
+             */
+                Console.WriteLine("\nЗадание номер 1.\nВведите минимальную температуру за сегодня!");
+            minTemperature = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите максимальную температуру за сегодня!");
+            maxTemperature = Convert.ToInt32(Console.ReadLine());
+            int averangeTemperature = (maxTemperature + minTemperature) / 2;
+                Console.WriteLine($"Сегодня средняя температура такая!! {averangeTemperature}");
+                Console.WriteLine("Для продолжения нажмите любую кнопку...");
+                Console.ReadKey();
+            /*
+             *                  Задание номер 2.
+             *
+             */
+                Console.WriteLine("Задание номер 2.\nНапишите номер месяца!");
             numberOfmonth = Convert.ToInt32(Console.ReadLine());
             switch (numberOfmonth)                                            
             {
@@ -60,7 +76,7 @@ namespace Lesson_2._4
                     return;  // закончить Main
             }
                 string trueMonth = DateTime.Now.ToString("MMMM");                           // проверка даты
-            if (trueMonth == nameOfmonth)                                              //если без проверки! Console.WriteLine($"Вы выбрали месяц: {nameOfmonth}");
+            if (trueMonth == nameOfmonth)                                                   //если без проверки! Console.WriteLine($"Вы выбрали месяц: {nameOfmonth}");
                 Console.WriteLine($"Действительно месяц который вы ввели верный!\nИ сейчас у нас {nameOfmonth}");
             else
             {
@@ -69,25 +85,28 @@ namespace Lesson_2._4
             }
                 Console.WriteLine("Для продолжения нажмите любую клавишу...");
                 Console.ReadKey();
-            //проверка температуры минимальная, максимальная и средняя за сутки.
-                Console.WriteLine("\nВведите минимальную температуру за сегодня!");
-            minTemperature = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Введите максимальную температуру за сегодня!");
-            maxTemperature = Convert.ToInt32(Console.ReadLine());
-            int averangeTemperature = (maxTemperature + minTemperature) / 2;
-                Console.WriteLine($"Сегодня средняя температура такая!! {averangeTemperature}");
-                Console.WriteLine("Для продолжения нажмите любую кнопку...");
+            /*
+             *                  Задание номер 3.
+             * 
+             */
+                Console.WriteLine("Задание номер 3.\nПроверка числа, введенного во втором задании на четность");   
+            if (numberOfmonth % 2 == 0)                                
+                Console.WriteLine("Число которое вы ввели: четное!");
+            else
+                {
+                Console.WriteLine("Число которое вы ввели: нечетное!");            
                 Console.ReadKey();
+                }
+            /*
+             *                  Задание номер 4.
+             * 
+             */
+                Console.WriteLine("Задание номер 4.\n");
+            if ((numberOfmonth < 3 || numberOfmonth == 12) || averangeTemperature >0 ) Console.WriteLine("Дождливая Зима");
+            else if (numberOfmonth < 6)     Console.WriteLine("А у нас Весна");
+            else if (numberOfmonth < 9)     Console.WriteLine("Ура... Лето");
+            else if (numberOfmonth < 12)    Console.WriteLine("Опять Осень");
             
-            if ((nameOfmonth == "Январь" || nameOfmonth == "Февраль" || nameOfmonth == "Декабрь") && averangeTemperature > 0)
-            {
-               Console.WriteLine("Зима дождливая");
-            }
-
-            Console.ReadKey();
         }
     }
-    
 }
-
-
